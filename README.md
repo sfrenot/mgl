@@ -14,8 +14,11 @@ comme par exemple `java -jar xxx`
 
 Le code doit fournir des tests de validation du DP.
 
-# Git help
-http://etnbrd.github.io/git-cheatsheet/  
+# Objectifs séance UML
+Voir le sujet `Sujet-UML.pdf`
+
+# Références
+GIT cheat sheet http://etnbrd.github.io/git-cheatsheet/  
 
 
 
