@@ -15,7 +15,8 @@ comme par exemple `java -jar xxx`
 Le code doit fournir des tests de validation du DP.
 
 # Objectifs séance UML
-Voir le sujet `Sujet-UML.pdf`
+Voir le sujet `Sujet-UML.pdf`.
+Pour réaliser vos diagrammes, vous pouvez utiliser http://www.draw.io
 
 # Références
 GIT cheat sheet http://etnbrd.github.io/git-cheatsheet/  
