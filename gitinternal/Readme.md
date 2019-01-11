@@ -20,8 +20,8 @@ Eventuellement les commandes suivantes sont également connues.
 
 L'objectif de ce TP est de comprendre l'architecture de fonctionnement interne de git dans certains détails.
 
-Q1 : Proposez une définition précise de l'objectif de git
-Q2 : Proposez une architecture de fonctionnement générale. En répondant par exemple aux questions suivantes.
+Q1 : Proposez une définition précise de l'objectif de git  
+Q2 : Proposez une architecture de fonctionnement générale, en répondant par exemple aux questions suivantes.
   - Comment faire pour gérer l'aspect multi-développement du code ?
   - Comment faire pour stocker l'information d'un projet ?
   - Comment faire pour fonctionner sans connexion ?
@@ -32,7 +32,7 @@ Nous allons maintenant étudier le fonctionnement interne de git.
 
 Git est un système de fichiers orienté clé-valeur. C'est à dire que les constituants classiques d'un système de fichiers sont réorganisés autour d'un concept de stockage 'clé/valeur'.
 
-Q3 : Quel structure et quel algorithme permettent de gérer la notion de clé / valeur
+Q3 : Quel structure et quel algorithme permettent de gérer la notion de clé / valeur  
 Q4 : Donnez pour un fichier dans le répertoire courant la liste des clés nécessaires que vous imaginez
 
 ---
@@ -69,7 +69,6 @@ Pour l'instant votre fichier est ajouté à la base de donnée de stockage. Mais
 
 Q8 : Quelles sont les commandes à exécuter pour trouver le fichier de description de l'arbre ?
 
---
 L'ajout d'un nouveau fichier dans un projet git se fait avec les commandes de haut-niveau suivantes :
 ```
 1- Création du fichier
@@ -77,8 +76,9 @@ L'ajout d'un nouveau fichier dans un projet git se fait avec les commandes de ha
 3- Ecriture de l'histoire dans le local repository : git commit -m'<Description du commit>'
 ```
 
+---  
 Q9 : Testez l'ajout d'un fichier dans votre historique git.
---
+
 Nous allons réaliser la même action avec les commandes de base.
 
 Vous avez déjà ajouté un fichier à votre repository local en utilisant la commande `git hash-object`. Voici les commandes permettant d'écrire l'histoire.
@@ -95,7 +95,7 @@ La commande `git log` permet de lister l'ordre des commits réalisés dans un re
 Exercice :
 Partez d'un nouveau repository vide, dans lequel vous commiterez un fichier test.txt, vide.
 
-git log doit produire la sortie suivante :
+`git log` doit produire la sortie suivante :
 ```
 commit 1d98175a10e983f63be300019106635863ef912a (HEAD -> master)
 Author: Stephane Frenot <stephane.frenot@insa-lyon.fr>
@@ -114,3 +114,17 @@ git commit-tree
 ```
 
 Vous testerez votre résultat de deux manières. En lançant la commande `git log` ainsi qu'avec la commande git checkout, une fois avoir tout supprimé dans le répertoire courant (sauf le sous-répertoire .git)
+
+```
+commit f84f74ed8bad237cda91f2be2e96898b978fa1bf (HEAD -> master)
+Author: Stephane Frenot <stephane.frenot@insa-lyon.fr>
+Date:   Fri Jan 11 14:51:53 2019 +0100
+
+    Ajout 2nd fichier
+
+commit 1d98175a10e983f63be300019106635863ef912a
+Author: Stephane Frenot <stephane.frenot@insa-lyon.fr>
+Date:   Fri Jan 11 14:42:35 2019 +0100
+
+    Ajout fichier
+```
