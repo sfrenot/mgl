@@ -4,6 +4,7 @@ Refs :
  https://medium.com/@shalithasuranga/how-does-git-work-internally-7c36dcb1f2cf   
  https://git-scm.com/book/en/v2/Git-Internals-Git-Objects   
  http://etnbrd.github.io/git-cheatsheet/   
+ http://matthieu-moy.fr/cours/formation-git/advanced-git-slides.pdf
 
 ```bash
   git clone
