@@ -1,15 +1,17 @@
-Ce TP suppose une connaissance de l'utilisation de git. Les commandes suivantes sont supposées connues :
-
 Refs :   
  https://medium.com/@shalithasuranga/how-does-git-work-internally-7c36dcb1f2cf   
  https://git-scm.com/book/en/v2/Git-Internals-Git-Objects   
- http://etnbrd.github.io/git-cheatsheet/   
  http://matthieu-moy.fr/cours/formation-git/advanced-git-slides.pdf
+
+Ce TP suppose une connaissance de l'utilisation de git. Les commandes suivantes sont supposées connues :
+
+La structure générale de commandes git peut se retrouver ici :  http://etnbrd.github.io/git-cheatsheet/   
 
 ```bash
   git clone
   git add
   git commit
+  git log
   git push
   git pull
 ```
@@ -21,20 +23,20 @@ Eventuellement les commandes suivantes sont également connues.
 
 L'objectif de ce TP est de comprendre l'architecture de fonctionnement interne de git dans certains détails.
 
-Q1 : Proposez une définition précise de l'objectif de git  
-Q2 : Proposez une architecture de fonctionnement générale, en répondant par exemple aux questions suivantes.
+Q1 : Proposez une définition de l'objectif de git  
+Q2 : Proposez une architecture de fonctionnement générale, en répondant par exemple aux questions suivantes.  
   - Comment faire pour gérer l'aspect multi-développement du code ?
   - Comment faire pour stocker l'information d'un projet ?
   - Comment faire pour fonctionner sans connexion ?
-  - Quels sont les outils de base nécessaires ?
+  - Quels sont les outils de base nécessaires pour gérer les versions d'un fichier ?
 
 ----
 Nous allons maintenant étudier le fonctionnement interne de git.
 
-Git est un système de fichiers orienté clé-valeur. C'est à dire que les constituants classiques d'un système de fichiers sont réorganisés autour d'un concept de stockage 'clé/valeur'.
+Git est un système de fichiers orienté clés-valeurs. C'est à dire que les constituants classiques d'un système de fichiers sont représentés dans un ensemble de couples clés/valeurs.
 
 Q3 : Quel structure et quel algorithme permettent de gérer la notion de clé / valeur  
-Q4 : Donnez pour un fichier dans le répertoire courant la liste des clés nécessaires que vous imaginez
+Q4 : Donnez pour un fichier dans le répertoire racine la liste des clés nécessaires qui permettent de représenter les données stockées.
 
 ---
 Testez vos propositions en créant un dépôt et en contrôlant ce qui est fabriqué.
@@ -52,21 +54,20 @@ Allez dans le répertoire `.git` et essayez de comprendre la structure du systè
 
 Q5 : Donnez une explication des différents répertoires et de de leur contenu.
 
-Git possède des fonction de haut-niveau pour manipuler le système.
-`git add / git commit` par exemple. Ces commandes reposent sur des d'autres commandes unitaires pour manipuler la structure.
-
 ---
 La commande `git cat-file -p <SHA-1 Signature>` permet d'afficher le contenu d'un fichier dont la clé est donné en paramètre.
 
-Q6 : Vérifiez que vous arrivez à tracer les différents fichiers du système de stockage git.
+Q6.1 : listez tous les objets nouvellement créés.
+Q6.2 : Vérifiez que vous arrivez à tracer les différents fichiers du système de stockage git.
+G6.3 : Que fait la commande checkout ?
 
 ---
-La commande `git hash-object -w <File>`, permet de stocker un fichier dans la base d'objets. Elle calcule le SHA-1 du fichier et en place.
+La commande `git hash-object -w <File>`, permet de stocker un fichier dans la base d'objets. Elle calcule le SHA-1 du fichier et le place dans le répertoire objects. 
 
 Q7 : Comment afficher le contenu du fichier obtenu ? Quel est le format ?
 
 ---
-Pour l'instant votre fichier est ajouté à la base de donnée de stockage. Mais il n'est pas référencé dans votre arbre de fichier.
+Pour l'instant votre fichier est ajouté à la base de donnée de stockage. Mais il n'est pas référencé dans votre arbre de fichiers.
 
 Q8 : Quelles sont les commandes à exécuter pour trouver le fichier de description de l'arbre ?
 
