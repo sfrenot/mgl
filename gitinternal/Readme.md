@@ -35,7 +35,8 @@ Nous allons maintenant étudier le fonctionnement interne de git.
 
 Git est un système de fichiers orienté clés-valeurs. C'est à dire que les constituants classiques d'un système de fichiers sont représentés dans un ensemble de couples clés/valeurs.
 
-Q3 : Quel structure et quel algorithme permettent de gérer la notion de clé / valeur  
+Q3.1 : Quelle type de clé peut être utilisé dans ce genre de sytème ?  
+Q3.2 : Quel structure et quel algorithme permettent de gérer la notion de clé / valeur  
 Q4 : Donnez pour un fichier dans le répertoire racine la liste des clés nécessaires qui permettent de représenter les données stockées.
 
 ---
@@ -62,7 +63,7 @@ Q6.2 : Vérifiez que vous arrivez à tracer les différents fichiers du système
 G6.3 : Que fait la commande checkout ?
 
 ---
-La commande `git hash-object -w <File>`, permet de stocker un fichier dans la base d'objets. Elle calcule le SHA-1 du fichier et le place dans le répertoire objects. 
+La commande `git hash-object -w <File>`, permet de stocker un fichier dans la base d'objets. Elle calcule le SHA-1 du fichier et le place dans le répertoire objects.
 
 Q7 : Comment afficher le contenu du fichier obtenu ? Quel est le format ?
 
