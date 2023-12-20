@@ -1,5 +1,6 @@
 # Références
 GIT cheat sheet http://etnbrd.github.io/git-cheatsheet/  
+ChatGPT / Stackoverflow est votre ami
 
 
 # Principes généraux
@@ -108,4 +109,12 @@ On a le droit de faire des erreurs... Il est donc logique est simple de revenir 
 `git diff <nomdufichier>` : vous indique toutes les modifications, entre la version courante de l'histoire et votre fichier actuel. Vous avez normalement l'ensemble des modifications. 
 `git checkout <nomdufichier>` : c'est l'arme universelle. Elle rétablie le fichier dans la dernière version commitée. Vous avez déjà utilisé cette commande en faisant un `rm -rf *` à la racine du projet. Un `git checkout .` va remonter de manière récursive tous les fichiers et répertoires du projet dans leur dernière version commitée. Il est également possible de revenir vers une version particulière de l'histoire du fichier. `git log` indique les versions accessibles de l'histoire.
 
-### Dans l'index space
+`git checkout 17446f4ee9a README.md` : récupère une version particulière de l'histoire
+`git checkout HEAD README.md` : récupère la version courante de l'histoire
+`git checkout HEAD^ README.md` : remonte dans les versions précédentes
+`git checkout HEAD^^ README.md`
+`git checkout HEAD^^^ README.md`
+
+### Dans l'index space  
+"J'ai ajouté par erreur des fichiers dans l'index space, mais je ne veux pas les mettre". 
+-
