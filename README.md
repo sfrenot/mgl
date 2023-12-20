@@ -159,8 +159,18 @@ Repartez d'un repertoire vide.
 
 L'interraction dans un projet se fait dans la démarche suivante :
 1. Récupération initiale
-   - La première action consiste à récupérer la base initiale avec la commande 'git clone'. Comme cette fois-ci nous voulons un accès développeur, nous utilisons l'accès `ssh` du projet. Si les droits de l'utilisateur sont suffisants, alors il peut faire un   
+   - La première action consiste à récupérer la base initiale avec la commande 'git clone'. 
 
+2. A chaque période de développement, commencer à récupérer les modification des autres utilisateurs
+   - `git pull`
+
+3. A chaque commit, pousser les données vers le serveur
+   - `git push`
+  
+
+--> Si un push se passe mal, pas de panique. Voici ce qui se passe.
+
+  
 
 
 # Oui mais, les branche, les tags, les merges request et les bissect ?
