@@ -207,6 +207,17 @@ git reset
 
 `git init`, n'est quasiment jamais utilisée car git s'utilise souvent avec un site de gestion gitlab/github qui vous simplifiera la création intiale de votre projet. Une fois créé, seule la commande `git clone` est utile pour manipuler un projet.
 
+### Comment utiliser git
+- Tout le temps
+- Tout le temps pour un code qui fonctionne. Ne poussez pas un code faux !
+- Supprimer vos commentaires inutiles et vos codes morts. Git sert justement à gérer cela.
+- Jamais de binaire
+- Jamais de données de connexion  / mots de passe / clé, etc...
+- Jamais de `git add -r *` 
+- Tout est enregistrer depuis l'origine du projet
+- Si votre projet est trop lourd, faites un nouveau projet
+  
+
 # Oui mais, les branches, les tags, rebase, les merges request, le CI/CD et les bissect ?
 Si vous commencez à participer à des projets git, vous aller  être confronté à quelques éléments de fonctionnement avancé classiques. 
 
@@ -225,6 +236,35 @@ Création :
 Bascule :
 `git checkout toto`  --> La commande checkout est donc importante. Elle demande à l'utilisateur de se placer à un endroit particulier avec un pointeur initial
 
+--> le reste est classique : git add/commit/push
+--> Le push demande à connaitre la branche distante associée
+
+`git checkout master`
+`git merge toto` --> Ramener les modification de toto à l'endroit ou je suis
+`git branch -d toto` --> Supprimer la branche toto
+
+===> Mais est-ce que le ménage est fini ?
+
+`git branch -a`
+
+`git glog` vous offre une nouvelle visualisation de vos commit. 
 
 L'option `--dry-run` permet de voir les commandes sans les exécuter. 
 
+### Comment utiliser les branches
+Il y a autant de gestionnaire de projet que de manière de gérer les branches. Mes conseils :
+ - Si vous ne savez pas à quoi cela va vous servir ne les utilisez pas
+ - Si votre projet s'organise sur une structuration en branches demandez la doc, et suivez les branches
+ - Faites-le ménage à la fin de vos branches
+ - N'attendez pas pour merger si possible
+  
+## Les tags
+Lorsque votre projet atteint une certaine taille, vous pouvez 'tagger' des versions / étapes. Cela permet de checkouter rapidement des étapes.
+
+## Rebase
+Rebase permet de réécrire l'histoire des logs. Certains logs sont mal structurés. Vous êtes fatigués, vous avez commité un gros commit qui contient du patch, de l'ajout de fonction, du code de débug, etc... Bref votre commit dit : 'Mise à jour du code'. Le lendemain vous décidez de régorganiser votre commit pour séparer les lignes qui sont du débug des lignes qui concernent des fonctions spécifiques.... L'outil s'appelle rebase
+
+## Arf, j'ai oublié le stash
+
+
+## et github ?
