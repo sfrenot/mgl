@@ -213,8 +213,7 @@ Si vous commencez à participer à des projets git, vous aller  être confronté
 ## Les branches
 Les branches sont un mécanisme simple, qui peut devenir cauchemardesque s'il est mal utilisé. Elles sont systématiquement utilisées sur des grands et gros projet afin d'éviter de mélanger l'états des différentes fonctionnalités d'un projet. 
 
-<<<<<<< HEAD
-=======
-# Oui mais, les branche, les tags, les merges request et les bissect ?
+Une branche consiste donc à dévier le projet pour développer une fonction spécifique sur un temps donné, sans bloquer le développement principal. Le principe consiste à ce que le développeur 'branche' le code initial vers un code particulier, qu'il fasse les modification sur ce code sans crainte de casser le code principal, puis de réaliser une action de regroupement de la branche de développement avec sa branche. 
 
->>>>>>> 23c8e498746b8d4d9b7da992f1e3c742eed9e96f
+
+
