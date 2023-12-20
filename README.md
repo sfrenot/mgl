@@ -94,11 +94,10 @@ Il existe un raccourci pour les étapes 2, 3. Il considère que tous les fichier
 Cette commande est un raccourci qu'il faut éviter de faire au début de l'utilisation de git. De toute façon je recommande de toujours faire un `git status` et/ou `git log` avant tout vos commit. Un commentaire ou une faute évidente est souvent oubliée. De plus, cela fait un rapide retour sur le code écrit pendant la session courante. 
 
 De base le code local suit donc le parcours suivant : 
->Working Space   -A->         Index Space           -B-> Commit Space
+>Working Space   -A->         Index Space           -B-> Storage Space
 >Zone de travail -A-> Zone de prépartion d'histoire -B-> Zone d'histoires validées
 
-L'appel `git add|remove` transfert les fichiers du Working space à l'index space. L'appel `git commit` transfert le fichier de l'Index vers le commit. Les deux espaces Index et Commit sont gérés dans le repertoire `.git`
-
+L'appel `git add|remove` transfert les fichiers du Working space à l'index space. L'appel `git commit` transfert le fichier de l'Index vers le commit. Les deux espaces Index et Storage sont gérés dans le repertoire `.git`
 
 ## Manipulation de git pour revenir en arrière
 On a le droit de faire des erreurs... Il est donc logique est simple de revenir en arrière dans l'écriture de l'histoire. Bien évidemment, plus on est loin dans l'écriture de l'histoire, plus le retour en arrière peut être compliqué. 
@@ -117,4 +116,9 @@ On a le droit de faire des erreurs... Il est donc logique est simple de revenir 
 
 ### Dans l'index space  
 "J'ai ajouté par erreur des fichiers dans l'index space, mais je ne veux pas les mettre". 
--
+
+`git reset toto.pdf` annule un fichier préparé pour le commit suivant. 
+
+*IL existe de très nombreuses commandes pour manipuler ces deux espaces* 
+*Toujours faire attention aux fichiers qui vont être impactés**
+*Sans le vouloir fortement, on peut rien perdre dans le Storage Space*
