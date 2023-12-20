@@ -262,9 +262,16 @@ Il y a autant de gestionnaire de projet que de manière de gérer les branches. 
 Lorsque votre projet atteint une certaine taille, vous pouvez 'tagger' des versions / étapes. Cela permet de checkouter rapidement des étapes.
 
 ## Rebase
-Rebase permet de réécrire l'histoire des logs. Certains logs sont mal structurés. Vous êtes fatigués, vous avez commité un gros commit qui contient du patch, de l'ajout de fonction, du code de débug, etc... Bref votre commit dit : 'Mise à jour du code'. Le lendemain vous décidez de régorganiser votre commit pour séparer les lignes qui sont du débug des lignes qui concernent des fonctions spécifiques.... L'outil s'appelle rebase
+Rebase permet de réécrire l'histoire des logs. Certains logs sont mal structurés. Vous êtes fatigués, vous avez commité un gros commit qui contient du patch, de l'ajout de fonction, du code de débug, etc... Bref votre commit dit : 'Mise à jour du code'. Le lendemain vous décidez de régorganiser votre commit pour séparer les lignes qui sont du débug des lignes qui concernent des fonctions spécifiques.... L'outil s'appelle `git rebase`. Attention, il peut rendre un peu addictif. 
+
+## Bisect
+"Je suis certain que j'avais écrit cette fonction quelque part, mais elle a disparue..."
+L'outil s'appelle `git bisect`, il va chercher dans votre espace d'histoire de manière dychotomique l'information que vous cherchez. 
 
 ## Arf, j'ai oublié le stash
+"Je suis en train de modifier mon code, et raoul travaille en même temps que moi. Il faut que pull sont code, mais je ne peux pas commiter ma partie de code, car je suis instable."
+La 'cachette/stash' est là pour ça. Avant de faire le pull et avoir un refus car les merges ne sont pas fait, vous pouvez planquer votre code dans le grenier. 
+`git stash push | pop` font le taf.
 
-
-## et github ?
+## et github, le CI/CD, le site web... ?
+Git est donc un outil de 
