@@ -164,4 +164,4 @@ L'interraction dans un projet se fait dans la démarche suivante :
 
 
 # Oui mais, les branche, les tags, les merges request et les bissect ?
-oui mai
+
