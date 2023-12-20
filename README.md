@@ -160,17 +160,56 @@ Repartez d'un repertoire vide.
 L'interraction dans un projet se fait dans la démarche suivante :
 1. Récupération initiale
    - La première action consiste à récupérer la base initiale avec la commande 'git clone'. 
+   - Nous allons faire un clonage particulier par token dédié. 
+  
+
 
 2. A chaque période de développement, commencer à récupérer les modification des autres utilisateurs
    - `git pull`
 
 3. A chaque commit, pousser les données vers le serveur
    - `git push`
-  
+git clone https://sfrenot:<token>@github.com/sfrenot/mgl.git
 
 --> Si un push se passe mal, pas de panique. Voici ce qui se passe.
+<pre>
+➜  mgl-git git:(master) ✗ git push
+To github.com:sfrenot/mgl.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'github.com:sfrenot/mgl.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+</pre>
 
-  
+Prenez le temps de comprendre ce qui se passe et cela va repartir tranquillement. Ne perdez jamais votre sang-froid, mais essayez de comprendre ce qui se passe !!! Au pire vous allez dans un nouveau répertoire et vous faite un clone du projet pour faire des comparaisons par la suite. Votre souci ne peut venir que de votre base locale qui n'est plus compatible ou moins compatible avec la base distante, et git vous protège pour ne rien détruire. 
 
+Essayez d'avoir toujours une idée en tête de l'état de votre projet par rapport à votre base de données locale : `git log | git reflog`, `git status` et `git diff` sont vos amis. 
 
-# Oui mais, les branche, les tags, les merges request et les bissect ?
+Essayez également d'imaginer que toutes les actions associées commit, log, etc. Sont des visualisations de la base de données cachée dans le répertoire `.git`. N'hésitez-pas à y faire un tour par curiosité et voir comment elle évolue lorsque vous faite des actions locales. 
+
+A ce point vous pouvez utiliser git comme un développeur standard. Demandez à votre boss dans quelle branche vous travaillez et toutes les commandes indiquées jusqu'à présent fonctionnent. Vous devez les connaitre et les comprendre. Notez les rôles de chacune.
+
+>git clone
+git status
+git diff
+git add
+git commit
+git log
+git push
+git pull
+git checkout
+git reset
+
+10 commandes !!!
+
+`git init`, n'est quasiment jamais utilisée car git s'utilise souvent avec un site de gestion gitlab/github qui vous simplifiera la création intiale de votre projet. Une fois créé, seule la commande `git clone` est utile pour manipuler un projet.
+
+# Oui mais, les branches, les tags, rebase, les merges request, le CI/CD et les bissect ?
+Si vous commencez à participer à des projets git, vous aller  être confronté à quelques éléments de fonctionnement avancé classiques. 
+
+## Les branches
+Les branches sont un mécanisme simple, qui peut devenir cauchemardesque s'il est mal utilisé. Elles sont systématiquement utilisées sur des grands et gros projet afin d'éviter de mélanger l'états des différentes fonctionnalités d'un projet. 
+
