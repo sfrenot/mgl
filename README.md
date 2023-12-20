@@ -215,5 +215,16 @@ Les branches sont un mécanisme simple, qui peut devenir cauchemardesque s'il es
 
 Une branche consiste donc à dévier le projet pour développer une fonction spécifique sur un temps donné, sans bloquer le développement principal. Le principe consiste à ce que le développeur 'branche' le code initial vers un code particulier, qu'il fasse les modification sur ce code sans crainte de casser le code principal, puis de réaliser une action de regroupement de la branche de développement avec sa branche. 
 
+Listing : 
+`git branch`
+`git branch -a`
 
+Création :
+`git branch toto`
+
+Bascule :
+`git checkout toto`  --> La commande checkout est donc importante. Elle demande à l'utilisateur de se placer à un endroit particulier avec un pointeur initial
+
+
+L'option `--dry-run` permet de voir les commandes sans les exécuter. 
 
