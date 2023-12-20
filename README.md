@@ -122,3 +122,12 @@ On a le droit de faire des erreurs... Il est donc logique est simple de revenir 
 *IL existe de très nombreuses commandes pour manipuler ces deux espaces* 
 *Toujours faire attention aux fichiers qui vont être impactés**
 *Sans le vouloir fortement, on peut rien perdre dans le Storage Space*
+
+
+### Depuis le store space
+"J'ai commité le fichier, mais l'histoire n'est pas bonne"
+
+`git commit --amend` : modifie la dernière histoire commitée
+`git reset --hard HEAD^^ : revient 'offficiellement' sur l'antepénultième version. 
+
+A partir de ce point, vous avez compris comment manipuler git d'un point de vue local. 
