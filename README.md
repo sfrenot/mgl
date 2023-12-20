@@ -61,22 +61,51 @@ Que vient-il de se passer ?
 `find .git`
 
 
-## Manipulation de git  
+## Manipulation de git pour faire progresser l'Histoire de l'évolution du code
 Le principe est de raconter une histoire sur l'évolution du code. Le fonctionnement est le suivant : 
 1. Ecrire le nouveau code qui peut être 
-  - Ajout / Modification / Suppression de ligne --> `diff / patch` sur un fichier
-  - Ajout / Suppression de fichier ou de repertoire --> diff patch dans une arborescence `diff -r | patch -r`
+  - Ajout / Modification / Suppression de ligne --> (qui se résume à un `diff / patch` sur un fichier)
+  - Ajout / Suppression de fichier ou de repertoire --> (qui se résume à un diff patch dans une arborescence `diff -r | patch -r`)
 
 2. Choisir les fichiers à ajouter pour la prochaine partie de l'histoire. 
   - Tous les fichiers modifiés ne font pas toujours partie de l'histoire modifiée. (fichiers de test, intermédiaires, etc..)
   
-  `git status` permet de connaitre tous les fichiers modifiés
-  `git diff` permet de connaitre les modifications
+  `git status` permet de connaitre tous les fichiers modifiés **et** l'histoire qui sera racontée à la prochaine étape. Il y a trois cas : 
+     - des fichiers et repertoires modifiés qui seront ajoutés à la suite de l'histoire *to be commited*
+     - des fichiers et répertoires modifiés qui ne seront pas ajoutés à la suite de l'histoire *not staged for commit*
+     - des fichiers et répertoires qui ne sont pas suivis *Untracked files*
+  `git diff` permet de connaitre les modifications réelles
+  `git add` permet d'ajouter les fichiers qui doivent faire partie de la suite de l'histoire de l'évolution du code
+  `git rm` permet de supprimer des fichiers qui ne font plus partie de l'histoire
+
+  Attention `git add` et `git rm` n'ajoutent pas directement les modifications. Ils sont ajouté dans un espace temporaire pour préparer la suite de l'histoire. 
+
+3. `Commiter` la suite de l'histoire
+Le principe de git est de décrire l'évolution du code source par une serie de points de contrôle ou points d'évolution de l'histoire. Chaque point s'appelle un `commit` et possède un numéro spécifique. Il est ainsi possible revenir à n'importe quel point de l'histoire de la dernière à la première action de `commit`. L'histoire raconte donc l'évolution du code par étapes successives, et tout est enregistré localement sur la machine (dans le répertoire `.git`) discuté initialement. 
+
+`git reflog` et al. : vous indiquent le déroulement de l'histoire.
+`git status` : vous indique ce qui va être ajouté à l'histoire dans la première section.
+`git commit` : valide la nouvelle partie de l'histoire. Git demande alors une explication d'une ligne qui résume ce chapitre de l'histoire.
+
+Il existe un raccourci pour les étapes 2, 3. Il considère que tous les fichiers modifiés, sans ajout, appartiennent à la suite de l'histoire `-a` et que l'explication tien sur une ligne :
+`git commit -am"Demande de suppression du code more d'avant-hier"`.
+
+Cette commande est un raccourci qu'il faut éviter de faire au début de l'utilisation de git. De toute façon je recommande de toujours faire un `git status` et/ou `git log` avant tout vos commit. Un commentaire ou une faute évidente est souvent oubliée. De plus, cela fait un rapide retour sur le code écrit pendant la session courante. 
+
+De base le code local suit donc le parcours suivant : 
+>Working Space   -A->         Index Space           -B-> Commit Space
+>Zone de travail -A-> Zone de prépartion d'histoire -B-> Zone d'histoires validées
+
+L'appel `git add|remove` transfert les fichiers du Working space à l'index space. L'appel `git commit` transfert le fichier de l'Index vers le commit. Les deux espaces Index et Commit sont gérés dans le repertoire `.git`
 
 
+## Manipulation de git pour revenir en arrière
+On a le droit de faire des erreurs... Il est donc logique est simple de revenir en arrière dans l'écriture de l'histoire. Bien évidemment, plus on est loin dans l'écriture de l'histoire, plus le retour en arrière peut être compliqué. 
 
+### Dans le working space / espace de travail
+"J'ai modifié un fichier, mais je veux revenir à la version initiale de l'histoire". 
 
+`git diff <nomdufichier>` : vous indique toutes les modifications, entre la version courante de l'histoire et votre fichier actuel. Vous avez normalement l'ensemble des modifications. 
+`git checkout <nomdufichier>` : c'est l'arme universelle. Elle rétablie le fichier dans la dernière version commitée. Vous avez déjà utilisé cette commande en faisant un `rm -rf *` à la racine du projet. Un `git checkout .` va remonter de manière récursive tous les fichiers et répertoires du projet dans leur dernière version commitée. Il est également possible de revenir vers une version particulière de l'histoire du fichier. `git log` indique les versions accessibles de l'histoire.
 
-
-
-
+### Dans l'index space
