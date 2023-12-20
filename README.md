@@ -43,6 +43,9 @@ Environnement d'exploitation du code
 ## vision groupe utilisateurs
 ```scp / wget```
 
+## le hashing
+```md5```
+
 # Git
 Exécuter les commandes suivantes
 `git clone https://github.com/sfrenot/mgl` 
@@ -60,7 +63,6 @@ Que vient-il de se passer ?
 
 ## Lancer un oeil dans .git
 `find .git`
-
 
 ## Manipulation de git pour faire progresser l'Histoire de l'évolution du code
 Le principe est de raconter une histoire sur l'évolution du code. Le fonctionnement est le suivant : 
@@ -123,15 +125,42 @@ On a le droit de faire des erreurs... Il est donc logique est simple de revenir 
 *Toujours faire attention aux fichiers qui vont être impactés**
 *Sans le vouloir fortement, on peut rien perdre dans le Storage Space*
 
-<<<<<<< HEAD
 
 ### Depuis le store space
 "J'ai commité le fichier, mais l'histoire n'est pas bonne"
 
 `git commit --amend` : modifie la dernière histoire commitée
-`git reset --hard HEAD^^ : revient 'offficiellement' sur l'antepénultième version. 
+`git reset --hard HEAD^^` : revient 'offficiellement' sur l'antepénultième version. 
 
 A partir de ce point, vous avez compris comment manipuler git d'un point de vue local. 
-=======
-## Nouvelle ligne
->>>>>>> 1eb248c235f8ce1dbabb945c8e4cb30b160cb011
+
+Par exemple si vous souhaiter démarrer un nouveau projet git. La commande initiale est `git init`.
+
+Vous pouvez compléter soit en regardant le fonctionnement de bas-niveau (cf td qui accompagne ce Readme), soit regarder la partie distribuée de git. 
+
+
+# Ecrire l'histoire à plusieurs
+Git est un outil extrêmement puissant pour gérer l'évolution du code source d'un projet. Par l'établissement d'un journal de bord qui exprime toutes les évolutions du code. 
+
+Un cas particulier d'utilisation survient lorsque le code est partagé entre plusieurs utilisateurs. 
+Dans ce cas, on va utiliser un site de dépot distant qui est capable dans les grandes lignes de stocker le répertoire `.git` du projet et de l'envoyer aux participants du projet. Le service minimal est donc un serveur ssh sécurisé pour accueillir les nouvelles version de la base de données du projet (le repertoire .git).
+
+Le site le plus connu pour gérer ces bases de données est github. Il offre toutes les fonctions suplémentaires que l'ont peut souhaiter dans le co-développement de logiciels ou de manière général de fichiers sources. Git est utilisé pour partager des plans de fabrications, des lois, des résultats de recherche, etc...
+
+A partir de maintenant l'histoire reprend à partir des commit d'un utilisateur et met en relation une machine locale et une machine distante. 
+
+Dans une durée courte il est difficile de créer des comptes github et d'inscrire les participants au projet. Ce qui est la démarche classique. 
+Nous allons faire différemment, pour l'exercice, nous allons passer par un accès par clé public/privé au dépot git. 
+
+Je ne détaillerais pas le principe des accès ssh, mais dans l'immédiat, si vous n'avez pas de clé public sur votre machine (dans le répartoire .ssh, le fichier id_rsa.pub ou id_dsa.pub), vous allez créer une paire de clés privé/public. Vous déposerez votre clé public dans un fichier partagé google mis à disposition pendant la séance.
+
+Une fois installée par l'enseignant, cette clé vous permet de récupérer le projet `.git` comme si vous êtiez membre du projet. 
+Repartez d'un repertoire vide. 
+
+L'interraction dans un projet se fait dans la démarche suivante :
+1. Récupération initiale
+   - La première action consiste à récupérer la base initiale avec la commande 'git clone'. Comme cette fois-ci nous voulons un accès développeur, nous utilisons l'accès `ssh` du projet. Si les droits de l'utilisateur sont suffisants, alors il peut faire un   
+
+
+
+# Oui mais, les branche, les tags, les merges request et les bissect ?
