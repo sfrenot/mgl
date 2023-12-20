@@ -122,3 +122,5 @@ On a le droit de faire des erreurs... Il est donc logique est simple de revenir 
 *IL existe de très nombreuses commandes pour manipuler ces deux espaces* 
 *Toujours faire attention aux fichiers qui vont être impactés**
 *Sans le vouloir fortement, on peut rien perdre dans le Storage Space*
+
+## Nouvelle ligne
