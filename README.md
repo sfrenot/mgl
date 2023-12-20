@@ -262,7 +262,7 @@ Il y a autant de gestionnaire de projet que de manière de gérer les branches. 
 Lorsque votre projet atteint une certaine taille, vous pouvez 'tagger' des versions / étapes. Cela permet de checkouter rapidement des étapes.
 
 ## Rebase
-Rebase permet de réécrire l'histoire des logs. Certains logs sont mal structurés. Vous êtes fatigués, vous avez commité un gros commit qui contient du patch, de l'ajout de fonction, du code de débug, etc... Bref votre commit dit : 'Mise à jour du code'. Le lendemain vous décidez de régorganiser votre commit pour séparer les lignes qui sont du débug des lignes qui concernent des fonctions spécifiques.... L'outil s'appelle `git rebase`. Attention, il peut rendre un peu addictif. 
+Rebase permet de réécrire l'histoire des logs. Certains logs sont mal structurés. Vous êtes fatigués, vous avez commité un gros commit qui contient du patch, de l'ajout de fonction, du code de débug, etc... Bref votre commit dit : 'Mise à jour du code'. Le lendemain vous décidez de régorganiser votre commit pour séparer les lignes qui sont du débug des lignes qui concernent des fonctions spécifiques.... L'outil s'appelle `git rebase`. Attention, il peut rendre un peu addictif. Mais ne jamais l'utiliser après un `git push` !!!
 
 ## Bisect
 "Je suis certain que j'avais écrit cette fonction quelque part, mais elle a disparue..."
@@ -274,4 +274,25 @@ La 'cachette/stash' est là pour ça. Avant de faire le pull et avoir un refus c
 `git stash push | pop` font le taf.
 
 ## et github, le CI/CD, le site web... ?
-Git est donc un outil de 
+Git est donc un outil de gestion de données sources de projet. Github est un site communautaire de projets. Toutes les actions réalisables sous git, peuvent l'être sous Github. Mais la majorité des commandes sont alors directement pushées sur le site distant. En résumé sur github le service est équivalent à git, mais plus lent, non autonome et nécessitant une connexion Internet active. L'utilisation de git en ligne de commande permet d'avancer facilement dans un projet en cours de développement. 
+
+Cela dit github/gitlab offrent des fonctions de groupes incomparables.
+### pour votre projet
+- Gestion fine des développeurs et de leur droits d'accès,
+- Visualisation du déroulement des versions,
+- Gestion de projet avec les issues, les bugs tracking, et le suivit des évolutions,
+- Messageries et communications,
+- Fourniture automatique d'un site Web autonome associé à votre projet,
+- Intégration d'outil de CI/CD (Intégration et Développements continus) notifications, automatisation de chaine de tests, trigger d'action...
+
+### pour vos projets
+github/gitlab offre enfin tout ce qui peut être assimilé à un réseau social de développeurs. 
+- Mise en relation
+- Fork de projet pour proposer des améliorations
+- Identification des origines de propriétés de projets
+- Sécurisation des projets dépendant de bibliothèques piratées
+- Projet public / privés
+- Intégration de copilot et IA génératives
+  
+
+
