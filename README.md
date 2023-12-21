@@ -2,7 +2,6 @@
 GIT cheat sheet http://etnbrd.github.io/git-cheatsheet/  
 ChatGPT / Stackoverflow est votre ami
 
-
 # Principes généraux
 - Gestion de projet  
   - Gestion de version de documents (souvent du code)  
@@ -97,8 +96,8 @@ Il considère que tous les fichiers modifiés (pas les ajouts de fichiers) depui
 Cette commande est un raccourci qu'il faut éviter d'utiliser au début de l'utilisation de git. De toute façon je recommande de toujours faire un `git status` et/ou `git log` avant tout commit. Un commentaire ou une faute évidente est souvent oubliée. De plus, cela vous permet aussi de faire un rapide retour sur le code écrit pendant la session courante. 
 
 De base, le code local suit donc le parcours suivant : 
->Working Space   -A->         Index Space           -B-> Storage Space
->Zone de travail -A-> Zone de préparation d'histoire -B-> Zone d'histoires validées
+>Working Space   -A->         Index Space           -B-> Storage Space  
+>Zone de travail -A-> Zone de préparation d'histoire -B-> Zone d'histoires validées  
 
 L'appel `git add|remove` transfert les fichiers du Working space à l'Index space. L'appel `git commit` transfert les fichiers de l'Index vers le Storage. Les deux espaces Index et Storage sont gérés dans le repertoire `.git` de votre machine.
 
@@ -139,6 +138,8 @@ Par exemple si vous souhaiter démarrer un nouveau projet git. La commande initi
 
 Vous pouvez compléter vos connaissances soit en regardant le fonctionnement de bas niveau (cf td qui accompagne ce Readme), soit regarder la partie distribuée de git. 
 
+# Ignorer les fichiers
+Ajouter le fichier `.gitignore` dans un répertoire à partir duquel vérifier les fichiers à ignorer (binaires, codes d'accès...) 
 
 # Ecrire l'histoire à plusieurs
 Git est un outil extrêmement puissant pour gérer l'évolution du code source d'un projet. Il le fait par l'établissement d'un journal de bord qui exprime toutes les évolutions du code. 
@@ -249,8 +250,6 @@ Bascule :
 ===> Mais est-ce que le ménage est fini ?
 
 `git branch -a`
-
-`git glog` vous offre une nouvelle visualisation de vos commit. 
 
 L'option `--dry-run` permet de voir les commandes sans les exécuter. 
 
