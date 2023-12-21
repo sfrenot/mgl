@@ -169,7 +169,7 @@ L'interraction dans un projet se fait dans la démarche suivante :
 
 3. A chaque commit, pousser les données vers le serveur
    - `git push`
-git clone https://sfrenot:<token>@github.com/sfrenot/mgl.git
+`git clone https://sfrenot:<token>@github.com/sfrenot/mgl.git`
 
 --> Si un push se passe mal, pas de panique. Voici ce qui se passe.
 <pre>
