@@ -1,6 +1,7 @@
 # Références
-GIT cheat sheet http://etnbrd.github.io/git-cheatsheet/  
-ChatGPT / Stackoverflow est votre ami
+GIT cheat sheet http://etnbrd.github.io/git-cheatsheet/    
+ChatGPT / Stackoverflow est votre ami 
+livre : https://git-scm.com/book/fr/v2  
 
 # Principes généraux
 - Gestion de projet  
@@ -245,7 +246,8 @@ Bascule :
 
 `git checkout master`
 `git merge toto` --> Ramener les modification de toto à l'endroit ou je suis
-`git branch -d toto` --> Supprimer la branche toto
+`git branch -d toto` --> Supprimer la branche locale toto
+`git push origin --delete toto` --> Supprimer la branche distante toto
 
 ===> Mais est-ce que le ménage est fini ?
 
