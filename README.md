@@ -162,14 +162,16 @@ L'interraction dans un projet se fait dans la démarche suivante :
    - La première action consiste à récupérer la base initiale avec la commande 'git clone'. 
    - Nous allons faire un clonage particulier par token dédié. 
   
-
-
-2. A chaque période de développement, commencer à récupérer les modification des autres utilisateurs
+  `git clone https://sfrenot:<token>@github.com/sfrenot/mgl.git`
+  Le token sera déposé dans ce document pendant le cours. 
+  https://docs.google.com/document/d/1cWD2do3I2KzsKROWc26XSqC7xLOvCoQ0BiMnhe5o1io/edit?usp=sharing
+  
+1. A chaque période de développement, commencer à récupérer les modification des autres utilisateurs
    - `git pull`
 
-3. A chaque commit, pousser les données vers le serveur
-   - `git push`
-`git clone https://sfrenot:<token>@github.com/sfrenot/mgl.git`
+2. A chaque commit, pousser les données vers le serveur
+   - `git push`  
+
 
 --> Si un push se passe mal, pas de panique. Voici ce qui se passe.
 <pre>
