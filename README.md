@@ -197,16 +197,16 @@ Essayez également d'imaginer que toutes les actions associées (commit, log, et
 
 A ce point vous pouvez utiliser git comme un développeur standard. Demandez à votre boss dans quelle branche vous travaillez et toutes les commandes indiquées jusqu'à présent fonctionnent. Vous devez les connaitre et les comprendre. Notez les rôles de chacune.
 
->git clone
-git status
-git diff
-git add
-git commit
-git log
-git push
-git pull
-git checkout
-git reset
+>git clone  
+git status  
+git diff  
+git add  
+git commit  
+git log  
+git push  
+git pull  
+git checkout  
+git reset  
 
 10 commandes !!!
 
