@@ -48,21 +48,21 @@ Environnement d'exploitation du code
 ```md5```
 
 # Git
-Exécuter les commandes suivantes
+Exécuter les commandes suivantes  
 `git clone https://github.com/sfrenot/mgl` 
-`cd mgl`
+`cd mgl`  
 
 Naviguer rapidement dans les fichiers pour voir à quoi ressemble ce code.  
 
-Attention il faut être sûr de ce que vous faites avec la commande suivante : 
-`rm -rf *`
-Malheur que venez-vous de faire ?
+Attention il faut être sûr de ce que vous faites avec la commande suivante :   
+`rm -rf *`    
+Malheur que venez-vous de faire ?  
 
-`git checkout .`
+`git checkout .`  
 
-Que vient-il de se passer ?
+Que vient-il de se passer ?   
 
-## Jeter un oeil dans .git
+## Jeter un oeil dans le répertoire .git
 `find .git`
 
 ## Manipulation de git pour faire progresser l'Histoire de l'évolution de votre code
