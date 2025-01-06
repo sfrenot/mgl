@@ -1,27 +1,29 @@
 # Références
 GIT cheat sheet http://etnbrd.github.io/git-cheatsheet/    
-
-ChatGPT / Stackoverflow est votre ami  
-livre : https://git-scm.com/book/fr/v2   
+ChatGPT est votre ami  
+livre de référence : https://git-scm.com/book/fr/v2   
 
 # Principes généraux
-- Gestion de projet  
-  - Gestion de version de documents (souvent du code)  
-    - Outils fondamentaux pour faire du code
+- Gestion de projet : métier principal de l'ingénieur  
+  - Gestion de version de documents problématique extrêmement complexe dans le cas générale
+    - Gestion de logiciels  
+      - Outils fondamentaux pour faire du code
 -----
 <pre>
-  Environnement de dev
-    <--- Code --->
-  Environnement d'exécution  
-    <--- Code --->
-  Environnement d'exploitation du code   
-    <--- Code --->
+  Environnement de développement  
+    <--- Code --->  
+  Environnement d'exécution (runtime)  
+    <--- Code + librairie --->
+  Environnement d'exploitation du code (exploitation)  
+    <--- Code + librairies + contraintes non-fonctionnelles --->
 </pre>
 
-Offrir les garanties suivantes :
+Offrir les garanties suivantes :   
 > Garantir que le code exécuté soit le même  
->   Garantir que les modifications d'un code soient connues  
->     Garantir que le code progresse dans un sens maîtrisé  
+>   Garantir que les modifications d'un code sont connues de tous  
+>     Garantir que le code progresse dans un sens maîtrisé (pas d'introduction de bug)   
+--> Sur la seule dimension valide du projet : l'exploitation 
+
 
 Besoin d'outils de gestion de code
 ----
