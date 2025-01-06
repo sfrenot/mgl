@@ -24,8 +24,15 @@ Offrir les garanties suivantes :
 >     Garantir que le code progresse dans un sens maîtrisé (pas d'introduction de bug)   
 --> Sur la seule dimension valide du projet : l'exploitation 
 
+Trois niveaux dont deux niveaux inutiles !!!!   
+ma machine --> une machine connue --> une autre machine inconnue   
 
-Besoin d'outils de gestion de code
+Savoir raisonner sur du très long terme : 10ans, 20ans.    
+Et sur de nombreux participants : 1, 3, 10, 100 développeurs.   
+
+===========================================================================
+Un point commun : Besoin d'outils de gestion de code
+
 ----
 <pre>
 Environnement de dev  
@@ -39,15 +46,11 @@ Environnement d'exploitation du code
       <--- Code --->
 </pre>
 
-# Outils de base pour la gestion de code
-## vision utilisateur
-```diff / patch / zip```
-
-## vision groupe utilisateurs
-```scp / wget```
-
-## le hashing
-```md5```
+#  Les outils de base pour la gestion de code
+```wget```   
+```zip```   
+```md5```  
+```diff | patch```
 
 # Git
 Exécuter les commandes suivantes  
