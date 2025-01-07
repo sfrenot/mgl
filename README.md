@@ -1,11 +1,11 @@
 # Références
 GIT cheat sheet http://etnbrd.github.io/git-cheatsheet/    
 ChatGPT est votre ami  
-livre de référence : https://git-scm.com/book/fr/v2   
+Livre de référence : https://git-scm.com/book/fr/v2   
 
 # Principes généraux
 - Gestion de projet : métier principal de l'ingénieur  
-  - Gestion de version de documents problématique extrêmement complexe dans le cas générale
+  - Gestion de version de documents : problématique extrêmement complexe dans le cas générale
     - Gestion de logiciels  
       - Outils fondamentaux pour faire du code
 -----
@@ -27,13 +27,13 @@ Offrir les garanties suivantes :
 Trois niveaux dont deux niveaux inutiles !!!!   
 ma machine --> une machine connue --> une autre machine inconnue   
 
-Savoir raisonner sur du très long terme : 10ans, 20ans.    
+Savoir raisonner sur du très long terme : 10 ans, 20 ans.    
 Et sur de nombreux participants : 1, 3, 10, 100 développeurs.   
 
-===========================================================================
-Un point commun : Besoin d'outils de gestion de code
-
 ----
+Un point commun : Besoin d'outils de gestion de code
+----
+
 <pre>
 Environnement de dev  
     Gestion de code
@@ -46,15 +46,16 @@ Environnement d'exploitation du code
       <--- Code --->
 </pre>
 
-#  Les outils de base pour la gestion de code
-```wget```   
-```zip```   
+#  Les 5 outils de base pour la gestion de code
+```wget | scp```   
+```zip | tar```   
 ```md5```  
-```diff | patch```
+```diff```
+```patch```
 
 # Git
 Exécuter les commandes suivantes  
-`git clone https://github.com/sfrenot/mgl` 
+`git clone https://github.com/sfrenot/mgl`   
 `cd mgl`  
 
 Naviguer rapidement dans les fichiers pour voir à quoi ressemble ce code.  
@@ -74,7 +75,7 @@ Que vient-il de se passer ?
 Le principe est de raconter une histoire sur l'évolution de votre code. Le fonctionnement est le suivant : 
 1. Ecrire le nouveau code qui peut être :
   - Ajout / Modification / Suppression de ligne --> (qui se résume à un `diff / patch` sur un fichier)
-  - Ajout / Suppression de fichier ou de repertoire --> (qui se résume à un diff patch dans une arborescence `diff -r | patch -r`)
+  - Ajout / Suppression de fichier ou de répertoire --> (qui se résume à un diff patch dans une arborescence `diff -r | patch -r`)
 
 2. Choisir les fichiers à ajouter pour la prochaine partie de l'histoire. 
   - Les fichiers modifiés ne font pas toujours tous partie de l'histoire (fichiers de test, intermédiaires, etc..)
@@ -197,7 +198,7 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 Prenez le temps de comprendre ce qui se passe et cela va repartir tranquillement. Ne perdez jamais votre sang-froid, mais essayez de comprendre ce qui se passe !!! Au pire vous allez dans un nouveau répertoire et vous faite un clone du projet pour faire des comparaisons par la suite. Votre souci ne peut venir que de votre base locale qui n'est plus compatible ou moins compatible avec la base distante, et git vous protège pour ne rien détruire. 
 
-Essayez d'avoir toujours en tête une idée de l'état de votre projet par rapport à votre base de données locale : `git log | git reflog`, `git status` et `git diff` sont vos amis. 
+Essayez d'avoir toujours en tête une idée de l'état de votre projet par rapport à votre base de données locale : `git log | git reflog` `git log --oneline --graph --decorate --all` , `git status` et `git diff` sont vos amis. 
 
 Essayez également d'imaginer que toutes les actions associées (commit, log, etc.) sont des visualisations de la base de données cachée dans le répertoire `.git`. N'hésitez-pas à y faire un tour par curiosité et voir comment elle évolue lorsque vous faite des actions locales. 
 
@@ -227,15 +228,17 @@ git reset
 - Jamais de `git add -r *` 
 - Tout est enregistré depuis l'origine du projet
 - Si votre projet est trop lourd, faites un nouveau projet
-  
+- Si votre projet contient des données qu'il ne devrait pas, faites un nouveau projet
 
+## Pensez à git vs github vs gitlab
+  
 # Oui mais, les branches, les tags, rebase, les merges request, le CI/CD et les bissect ?
 Si vous commencez à participer à des projets git, vous allez être confrontés à quelques éléments de fonctionnement avancé classiques. 
 
 ## Les branches
 Les branches sont un mécanisme simple, qui peut devenir cauchemardesque s'il est mal utilisé. Elles sont systématiquement utilisées sur des grands et gros projets afin d'éviter de mélanger l'état d'avancement des différentes fonctionnalités d'un projet. 
 
-Une branche consiste donc à dévier le projet pour développer une fonction spécifique sur un temps donné, sans bloquer le développement principal. Le principe consiste à ce que le développeur 'branche' le code initial vers un code particulier, qu'il fasse les modification sur ce code sans crainte de casser le code principal, puis de réaliser une action de regroupement de la branche de développement avec la branche principale. 
+Une branche consiste donc à dévier le projet pour développer une fonction spécifique sur un temps donné, sans bloquer la progression générale du projet principal. Le principe consiste à ce que le développeur 'branche' le code initial vers un code particulier, qu'il fasse les modification sur ce code sans crainte de casser le code principal, puis de réaliser une action de regroupement de la branche de développement avec la branche principale. 
 
 Listing : 
 `git branch`
@@ -250,8 +253,17 @@ Bascule :
 --> le reste est classique : git add/commit/push
 --> Le push demande à connaitre la branche distante associée
 
-`git checkout master`
-`git merge toto` --> Ramener les modification de toto à l'endroit ou je suis
+## Une fois la *feature* développées il faut l'intégrer et la tester dans le programme principal
+`git rebase main` permet de remettre le pointeur de la branche *main* au plus proche de votre branche *feature*. Cette opération peut soulever des conflits qu'il faudra résoudre étape par étape. 
+
+Lorsque le rebase est fait dans votre branche, cela veut dire que vous êtes à jour de votre fonctionnalité. Vous pouvez alors l'intégrer dans le projet principal. (Souvent après une étape de contrôle par l'intégrateur du projet).   
+`git checkout main`  
+`git merge <feature>`   
+
+Si votre rebase a bien été fait, cela ne posera pas de problème car vous avez réintégré le développement de la branche principale. 
+Le `git merge` perdra le détail des commits que vous avez réalisé pour le développement de votre *feature*. Il est possible de conserver cet historique en utilisant `git rebase <feature>` à la place du merge. 
+
+Une fois votre feature terminée et intégrée à votre projet principal, il est important de finir le ménage en supprimant les branches de feature créées. 
 `git branch -d toto` --> Supprimer la branche locale toto
 `git push origin --delete toto` --> Supprimer la branche distante toto
 
@@ -276,7 +288,7 @@ Rebase permet de réécrire l'histoire des logs. Certains logs sont mal structur
 
 ## Bisect
 "Je suis certain que j'avais écrit cette fonction quelque part, mais elle a disparu..."
-L'outil s'appelle `git bisect`, il va chercher dans votre espace d'histoire de manière dychotomique l'information que vous cherchez. 
+L'outil s'appelle `git bisect`, il va chercher de manière dychotomique dans votre espace d'histoire l'information que vous cherchez. 
 
 ## Arf, j'ai oublié le stash
 "Je suis en train de modifier mon code, et Raoul travaille en même temps que moi. Il faut que je pull son code, mais je ne peux pas commiter ma partie de code, car je suis instable."
