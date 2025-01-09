@@ -260,7 +260,8 @@ Lorsque le rebase est fait dans votre branche, cela veut dire que vous êtes à 
 `git checkout main`  
 `git merge --no-ff <feature>`   
 
-Pour visualiser vous pouvez ajouter un alias à votre environnement pour l'affichage des logs.   
+Pour visualiser vous pouvez ajouter un alias à votre environnement pour l'affichage des logs.      
+`git config --list`   
 `git config --global alias.lola "log --graph --decorate --pretty=oneline --abbrev-commit --all"`   
 ou d'autres alias sont également possibles.    
 `alias.glog=log --oneline --decorate --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'`   
@@ -274,7 +275,7 @@ Si vous avez loupé ou oublié votre rebase, vous allez vous faire gronder... Il
 
 Le script `examples/simple.sh', simule un projet simple avec des conflits. L'objectif est de comparer les différentes commandes à faire pour obtenir le bon résultat final. 
 
-Ne lisez pas la suite si vous voulez essayer de comprendre.
+Ne lisez pas la suite si vous voulez essayer de comprendre.  
 `git rebase main`   
 `git commit -am 'corrections'`   
 `git checkout main`    
