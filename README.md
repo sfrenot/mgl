@@ -1,4 +1,4 @@
-# Références
+# Références --
 GIT cheat sheet http://etnbrd.github.io/git-cheatsheet/    
 ChatGPT est votre ami  
 Livre de référence : https://git-scm.com/book/fr/v2   
