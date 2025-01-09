@@ -258,10 +258,28 @@ Bascule :
 
 Lorsque le rebase est fait dans votre branche, cela veut dire que vous êtes à jour de votre fonctionnalité. Vous pouvez alors l'intégrer dans le projet principal. (Souvent après une étape de contrôle par l'intégrateur du projet).   
 `git checkout main`  
-`git merge <feature>`   
+`git merge --no-ff <feature>`   
 
-Si votre rebase a bien été fait, cela ne posera pas de problème car vous avez réintégré le développement de la branche principale. 
-Le `git merge` perdra le détail des commits que vous avez réalisé pour le développement de votre *feature*. Il est possible de conserver cet historique en utilisant `git rebase <feature>` à la place du merge. 
+Pour visualiser vous pouvez ajouter un alias à votre environnement pour l'affichage des logs.   
+`git config --global alias.lola "log --graph --decorate --pretty=oneline --abbrev-commit --all"`   
+ou d'autres alias sont également possibles.    
+`alias.glog=log --oneline --decorate --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'`   
+`alias.glogg=!git glog --branches --remotes`   
+`alias.glogs=!git glog --stat`  
+`alias.gloggs=!git glogg --stat`   
+
+
+Si votre rebase a bien été fait, cela ne posera pas de problème car vous avez réintégré le développement de la branche principale.    
+Si vous avez loupé ou oublié votre rebase, vous allez vous faire gronder... Il faut annuler votre rebase. 
+
+Le script `examples/simple.sh', simule un projet simple avec des conflits. L'objectif est de comparer les différentes commandes à faire pour obtenir le bon résultat final. 
+
+Ne lisez pas la suite si vous voulez essayer de comprendre.
+`git rebase main`   
+`git commit -am 'corrections'`   
+`git checkout main`    
+`git merge --no-ff feature`    
+
 
 Une fois votre feature terminée et intégrée à votre projet principal, il est important de finir le ménage en supprimant les branches de feature créées.   
 `git branch -d toto` --> Supprimer la branche locale toto    
