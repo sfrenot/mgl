@@ -8,7 +8,7 @@ git commit -m'Ajout empty dans main'
 
 git branch feature
 git checkout feature
-touch toto
+echo "prout" > toto
 git add toto
 git commit -m'Ajout toto dans feature'
 

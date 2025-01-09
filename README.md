@@ -248,10 +248,10 @@ Création :
 `git branch toto`
 
 Bascule :
-`git checkout toto`  --> La commande checkout est donc importante. Elle demande à l'utilisateur de se placer à un endroit particulier avec un pointeur initial
-
---> le reste est classique : git add/commit/push
---> Le push demande à connaitre la branche distante associée
+`git checkout toto`
+--> La commande checkout est donc importante. Elle demande à l'utilisateur de se placer à un endroit particulier avec un pointeur initial   
+--> le reste est classique : git add/commit/push   
+--> Le push demande à connaitre la branche distante associée   
 
 ## Une fois la *feature* développées il faut l'intégrer et la tester dans le programme principal
 `git rebase main` permet de remettre le pointeur de la branche *main* au plus proche de votre branche *feature*. Cette opération peut soulever des conflits qu'il faudra résoudre étape par étape. 
@@ -263,9 +263,9 @@ Lorsque le rebase est fait dans votre branche, cela veut dire que vous êtes à 
 Si votre rebase a bien été fait, cela ne posera pas de problème car vous avez réintégré le développement de la branche principale. 
 Le `git merge` perdra le détail des commits que vous avez réalisé pour le développement de votre *feature*. Il est possible de conserver cet historique en utilisant `git rebase <feature>` à la place du merge. 
 
-Une fois votre feature terminée et intégrée à votre projet principal, il est important de finir le ménage en supprimant les branches de feature créées. 
-`git branch -d toto` --> Supprimer la branche locale toto
-`git push origin --delete toto` --> Supprimer la branche distante toto
+Une fois votre feature terminée et intégrée à votre projet principal, il est important de finir le ménage en supprimant les branches de feature créées.   
+`git branch -d toto` --> Supprimer la branche locale toto    
+`git push origin --delete toto` --> Supprimer la branche distante toto   
 
 ===> Mais est-ce que le ménage est fini ?
 
