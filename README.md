@@ -282,6 +282,7 @@ Ne lisez pas la suite si vous voulez essayer de comprendre.
 `git merge --no-ff feature`    
 
 
+Vous devriez obtenir cela avec un `git lola`
 ```
 *   0231f65 (HEAD -> main) Merge branch 'feature'
 |\  
@@ -290,6 +291,17 @@ Ne lisez pas la suite si vous voulez essayer de comprendre.
 * 859417d Ajout C dans main
 * f47e1dd Ajout A dans empty/main
 ```
+
+Si vous obtenez cela, vous avez loupé votre rebase
+```
+*   b51b22e (HEAD -> main) Merge branch 'feature'
+|\
+| * c1acc57 (feature) Ajout B dans empty/feature
+* | 34930f1 Ajout C dans main
+|/
+* 4ceeacb Ajout A dans empty/main
+```
+C'est trop tard... Comment revenir en arrière ?
 
 
 Une fois votre feature terminée et intégrée à votre projet principal, il est important de finir le ménage en supprimant les branches de feature créées.   
