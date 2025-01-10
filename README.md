@@ -1,4 +1,4 @@
-# Références --
+# Références
 GIT cheat sheet http://etnbrd.github.io/git-cheatsheet/    
 ChatGPT est votre ami  
 Livre de référence : https://git-scm.com/book/fr/v2   
@@ -46,12 +46,11 @@ Environnement d'exploitation du code
       <--- Code --->
 </pre>
 
-#  Les 5 outils de base pour la gestion de code
+#  Les 5 outils de base pour la gestion de code  
+```diff``` ```patch```
+```md5```  
 ```wget | scp```   
 ```zip | tar```   
-```md5```  
-```diff```
-```patch```
 
 # Git
 Exécuter les commandes suivantes  
