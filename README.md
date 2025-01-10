@@ -282,6 +282,16 @@ Ne lisez pas la suite si vous voulez essayer de comprendre.
 `git merge --no-ff feature`    
 
 
+```
+*   0231f65 (HEAD -> main) Merge branch 'feature'
+|\  
+| * 957874b (feature) Ajout B dans empty/feature
+|/  
+* 859417d Ajout C dans main
+* f47e1dd Ajout A dans empty/main
+```
+
+
 Une fois votre feature terminée et intégrée à votre projet principal, il est important de finir le ménage en supprimant les branches de feature créées.   
 `git branch -d toto` --> Supprimer la branche locale toto    
 `git push origin --delete toto` --> Supprimer la branche distante toto   
