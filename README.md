@@ -302,6 +302,14 @@ Si vous obtenez cela, vous avez loupé votre rebase
 * 4ceeacb Ajout A dans empty/main
 ```
 C'est trop tard... Comment revenir en arrière ?
+Réponse : 
+```
+git reset --hard 34930f188ad644262a70511f435a5976c1062fd3
+git checkout feature
+git rebase main
+git checkout main
+git merge feature --no-ff
+```
 
 
 Une fois votre feature terminée et intégrée à votre projet principal, il est important de finir le ménage en supprimant les branches de feature créées.   
