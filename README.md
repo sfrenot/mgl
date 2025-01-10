@@ -34,6 +34,8 @@ Et sur de nombreux participants : 1, 3, 10, 100 développeurs.
 Un point commun : Besoin d'outils de gestion de code
 ----
 
+TRCUCUCUUZUZUD
+
 <pre>
 Environnement de dev  
     Gestion de code
@@ -50,7 +52,7 @@ Environnement d'exploitation du code
 ```diff``` ```patch```
 ```md5```  
 ```wget | scp```   
-```zip | tar```   
+
 
 # Git
 Exécuter les commandes suivantes  
