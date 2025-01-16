@@ -10,9 +10,6 @@ Livre de référence : https://git-scm.com/book/fr/v2
       - Outils fondamentaux pour faire du code
 -----
 
-TOTO
-
-TUTU
 <pre>
   Environnement de développement  
     <--- Code --->  
