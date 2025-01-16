@@ -10,8 +10,6 @@ Livre de référence : https://git-scm.com/book/fr/v2
       - Outils fondamentaux pour faire du code
 -----
 
-dqsdpqj
-
 <pre>
   Environnement de développement  
     <--- Code --->  
@@ -38,7 +36,7 @@ Un point commun : Besoin d'outils de gestion de code
 ----
 
 TRCUCUCUUZUZUD
-mon test git 2025
+
 <pre>
 Environnement de dev  
     Gestion de code
