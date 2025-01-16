@@ -10,10 +10,6 @@ Livre de référence : https://git-scm.com/book/fr/v2
       - Outils fondamentaux pour faire du code
 -----
 
-Ajout d'autres chose 
-
-fpsqjdsqjkd
-
 dqsdpqj
 
 <pre>
