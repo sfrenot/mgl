@@ -366,6 +366,16 @@ github/gitlab offre enfin tout ce qui peut être assimilé à un réseau social 
 - Sécurisation des projets dépendant de bibliothèques piratées
 - Projets publics / privés
 - Intégration de copilot et IA génératives
+
+### Semantic versionning
+
+Semver -> Semantic versionning
+X.Y.Z-xx
+Majeur -> breaking change
+Minor -> feature evolution (pas de casse)
+patch -> bug fix
+xx -> release candidate
+
   
 
 
