@@ -4,11 +4,23 @@ ChatGPT est votre ami
 Livre de référence : https://git-scm.com/book/fr/v2   
 
 # Principes généraux
-- Gestion de projet : métier principal de l'ingénieur  
-  - Gestion de version de documents : problématique extrêmement complexe dans le cas général
-    - Gestion de logiciels  
-      - Outils fondamentaux pour faire du code
------
+- Ingénieur --> Gère des projets   
+  - Projet      --> Avant tout de la documentation  
+    - Documentation --> Temps long, Multi-auteurs, Problème de l'expression...  
+
+Dans le cas de l'informatique    
+- Le code est de la documentation, tout peut être code   
+- Dualité code source, code compilé  
+
+C -> objet
+java, bytecode -> bytecode
+latex -> ps / pdf
+html -> web
+scheduler.c -> linux
+
+[!TIP]
+Idée : Si je gère mon code source, alors je gère mon projet.
+
 
 <pre>
   Environnement de développement  
