@@ -8,56 +8,21 @@ Livre de référence : https://git-scm.com/book/fr/v2
   - Projet      --> Avant tout de la documentation  
     - Documentation --> Temps long, Multi-auteurs, Problème de l'expression...  
 
-Dans le cas de l'informatique    
+**Dans le cas de l'informatique**
 - Le code est de la documentation, tout peut être code   
 - Dualité code source, code compilé  
 
-C -> objet
-java, bytecode -> bytecode
-latex -> ps / pdf
-html -> web
-scheduler.c -> linux
+
+> C -> objet  
+> java, bytecode -> bytecode  
+> latex -> ps / pdf  
+> html -> web  
+> scheduler.c -> linux   
 
 [!TIP]
 Idée : Si je gère mon code source, alors je gère mon projet.
 
 
-<pre>
-  Environnement de développement  
-    <--- Code --->  
-  Environnement d'exécution (runtime)  
-    <--- Code + librairie --->
-  Environnement d'exploitation du code (exploitation)  
-    <--- Code + librairies + contraintes non-fonctionnelles --->
-</pre>
-
-Offrir les garanties suivantes :   
-> Garantir que le code exécuté soit le même  
->   Garantir que les modifications d'un code sont connues de tous  
->     Garantir que le code progresse dans un sens maîtrisé (pas d'introduction de bug)   
---> Sur la seule dimension valide du projet : l'exploitation 
-
-Trois niveaux dont deux niveaux inutiles !!!!   
-ma machine --> une machine connue --> une autre machine inconnue   
-
-Savoir raisonner sur du très long terme : 10 ans, 20 ans.    
-Et sur de nombreux participants : 1, 3, 10, 100 développeurs.   
-
-----
-Un point commun : Besoin d'outils de gestion de code
-----
-
-<pre>
-Environnement de dev  
-    Gestion de code
-      <--- Code --->
-Environnement d'exécution  
-    Gestion de code
-      <--- Code --->
-Environnement d'exploitation du code   
-    Gestion de code
-      <--- Code --->
-</pre>
 
 #  Les 5 outils de base pour la gestion de code  
 ```diff``` ```patch```
@@ -357,6 +322,45 @@ La 'cachette/stash' est là pour ça. Avant de faire le pull et avoir un refus c
 `git stash push | pop` font le taf.
 
 ## et github, le CI/CD, le site web... ?
+
+<pre>
+  Environnement de développement  
+    <--- Code --->  
+  Environnement d'exécution (runtime)  
+    <--- Code + librairie --->
+  Environnement d'exploitation du code (exploitation)  
+    <--- Code + librairies + contraintes non-fonctionnelles --->
+</pre>
+
+Offrir les garanties suivantes :   
+> Garantir que le code exécuté soit le même  
+>   Garantir que les modifications d'un code sont connues de tous  
+>     Garantir que le code progresse dans un sens maîtrisé (pas d'introduction de bug)   
+--> Sur la seule dimension valide du projet : l'exploitation 
+
+Trois niveaux dont deux niveaux inutiles !!!!   
+ma machine --> une machine connue --> une autre machine inconnue   
+
+Savoir raisonner sur du très long terme : 10 ans, 20 ans.    
+Et sur de nombreux participants : 1, 3, 10, 100 développeurs.   
+
+----
+Un point commun : Besoin d'outils de gestion de code
+----
+
+<pre>
+Environnement de dev  
+    Gestion de code
+      <--- Code --->
+Environnement d'exécution  
+    Gestion de code
+      <--- Code --->
+Environnement d'exploitation du code   
+    Gestion de code
+      <--- Code --->
+</pre>
+
+
 Git est donc un outil de gestion de données sources de projet. Github est un site communautaire de projets. Toutes les actions réalisables sous git, peuvent l'être sous Github. Mais la majorité des commandes sont alors directement pushées sur le site distant. En résumé sur github le service est équivalent à git, mais plus lent, non autonome et nécessitant une connexion Internet active. L'utilisation de git en ligne de commande permet d'avancer facilement dans un projet en cours de développement. 
 
 Cela dit github/gitlab offrent des fonctions de groupes incomparables.
