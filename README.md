@@ -5,7 +5,7 @@ Livre de référence : https://git-scm.com/book/fr/v2
 
 # Principes généraux
 - Gestion de projet : métier principal de l'ingénieur  
-  - Gestion de version de documents : problématique extrêmement complexe dans le cas générale
+  - Gestion de version de documents : problématique extrêmement complexe dans le cas général
     - Gestion de logiciels  
       - Outils fondamentaux pour faire du code
 -----
