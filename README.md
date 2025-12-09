@@ -19,10 +19,8 @@ Livre de référence : https://git-scm.com/book/fr/v2
 > html -> web  
 > scheduler.c -> linux   
 
-[!TIP]
+### 💡 Idée
 Idée : Si je gère mon code source, alors je gère mon projet.
-
-
 
 #  Les 5 outils de base pour la gestion de code  
 ```diff``` ```patch```
