@@ -15,7 +15,7 @@ Livre de référence : https://git-scm.com/book/fr/v2
 
 > C -> objet  
 > java, bytecode -> bytecode  
-> latex -> ps / pdf  
+> latex -> ps / pdf   ---> Donnez example  
 > html -> web  
 > scheduler.c -> linux   
 
@@ -28,7 +28,7 @@ Idée : Si je gère mon code source, alors je gère mon projet.
 ```wget | scp```   
 
 
-# Git
+# Git vs Github
 Exécuter les commandes suivantes  
 `git clone https://github.com/sfrenot/mgl`   
 `cd mgl`  
@@ -387,6 +387,31 @@ Majeur -> breaking change
 Minor -> feature evolution (pas de casse)
 patch -> bug fix
 xx -> release candidate
+
+
+### Divers
+Git / Mercurial / Subversion  
+Les applications à 12 facteurs  : web apps - software as a service : https://12factor.net/  
+1.  Un code base, plusieurs déploiements
+2.  Déclaration explicite et isolation des dépendances
+3.  Stocker les configurations dans l'environnement - variables d'environnement
+4.  Traiter les service support comme des ressources
+5.  Build / Release / Run sont séparés : Build + config -> Release / Release + Hard -> Run
+6.  Exécuter l'application comme un ou plusieurs process stateless  
+7.  Les services sont offerts via un binding de port tcp
+8.  (Concurrence) L'augmentation de puissance se fait via les processus
+9.  (Jetabilité) Augmenter la robustivité en ayant un démarrage rapide et un arrêt propre 
+10. Les environnement de dev, préprod et prod doivent être le plus similaire possible
+11. Les logs sont traités comme un flot d'événements
+12. Exécuter les tâches d’administration/gestion en tant que processus ponctuels 
+
+
+
+
+
+
+
+
 
   
 
