@@ -2,6 +2,7 @@
 GIT cheat sheet http://etnbrd.github.io/git-cheatsheet/    
 ChatGPT est votre ami  
 Livre de référence : https://git-scm.com/book/fr/v2   
+zazeaze
 
 # Principes généraux
 - Ingénieur --> Gère des projets   
@@ -406,6 +407,7 @@ Les applications à 12 facteurs  : web apps - software as a service : https://12
 12. Exécuter les tâches d’administration/gestion en tant que processus ponctuels 
 
 
+aazaza
 
 
 
