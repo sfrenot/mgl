@@ -12,7 +12,6 @@ Livre de référence : https://git-scm.com/book/fr/v2
 - Le code est de la documentation, tout peut être code   
 - Dualité code source, code compilé  
 
-
 > C -> objet  
 > java, bytecode -> bytecode  
 > latex -> ps / pdf   ---> Donnez example  
@@ -22,10 +21,19 @@ Livre de référence : https://git-scm.com/book/fr/v2
 ### 💡 Idée
 Idée : Si je gère mon code source, alors je gère mon projet.
 
-#  Les 5 outils de base pour la gestion de code  
-```diff``` ```patch```
-```md5```  
-```wget | scp```   
+#  Les outils de base pour la gestion de code  
+```diff``` ```patch``` ```md5``` ```wget | scp```
+
+## Exercice : Patcher un fichier
+- Créer un fichier `test_v0.txt` contenant quelques lignes de texte
+- Créer un second fichier `test_v1.txt` contenant des lignes différentes
+- Tester la commande `diff` afin de regarder le format de sortie
+
+- Sauvegardez dans un fichier `patch.test` la sortie permettant de passer de la version 0 à la version 1 
+- Déplacez le fichier v1 ver `test_v1.txt.sav`
+   
+- Montrer qu'avec la commande `patch` vous pouvez fabriquer un fichier `test_v1.txt` qui est strictement identique au fichier `test_v1.txt.sav`
+
 
 
 # Git vs Github
