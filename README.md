@@ -35,6 +35,10 @@ Idée : Si je gère mon code source, alors je gère mon projet.
 - Montrer qu'avec la commande `patch` vous pouvez fabriquer un fichier `test_v1.txt` qui est strictement identique au fichier `test_v1.txt.sav`
 
 
+## Exercice : Manipuler sha256
+- Créer un fichier contenant un espace et lancer la commande `md5` dessus
+- Modifiez un octet du fichier et vérifiez que le sha est complètement différent
+- Trouvez un document dont le sha commence par '0000'
 
 # Git vs Github
 Exécuter les commandes suivantes  
