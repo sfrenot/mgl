@@ -96,13 +96,6 @@ De base, le code local suit donc le parcours suivant :
 
 L'appel `git add|remove` transfert les fichiers du Working space à l'Index space. L'appel `git commit` transfert les fichiers de l'Index vers le Storage. Les deux espaces Index et Storage sont gérés dans le repertoire `.git` de votre machine.
 
-# Revenons en arrière (comme nous avons du temps)
-- Dans un répertoire vierge lancer la commande `git init` et regarder ce qu'il se passe
-- Ajoutez un fichier vide `toto.txt` à votre projet et vérifier qu'il a été créé
-- A partir du fichier HEADS repérez votre fichier
-- Avec la commande `git cat-file -t <hash>` et `git cat-file -p <hash>` essayez de comprendre comment git manipule votre projet
-
-# On revient dans le projet initial
 ## Manipulation de git pour revenir en arrière
 On a le droit de faire des erreurs... Il est donc logique et simple de revenir en arrière dans l'écriture de l'histoire. Bien évidemment, plus on est loin dans l'écriture de l'histoire, plus le retour en arrière peut être compliqué. 
 
